@@ -56,3 +56,16 @@ dependencies:
     tags:
       - container-engine
       - docker
+
+  - role: container-engine/runc
+    when:
+      - container_manager == 'containerd'
+
+  - role: container-engine/nerdctl
+    when:
+      - container_manager == 'containerd'
+
+  - role: container-engine/crictl
+    when:
+      - container_manager == 'containerd'
+
